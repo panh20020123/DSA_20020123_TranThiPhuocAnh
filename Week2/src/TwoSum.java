@@ -3,7 +3,7 @@ import edu.princeton.cs.algs4.StdArrayIO;
 
 import java.util.Arrays;
 
-public class Sum {
+public class TwoSum {
     public static void main(String[] args) {
         In in = new In ("D:\\algs4-data\\2Kints.txt"); //tao luong doc
         int[] a = in.readAllInts(); // doc vao mang a
