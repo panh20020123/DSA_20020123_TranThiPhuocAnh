@@ -1,0 +1,5 @@
+Kết quả chạy code SelectionSort.java
+
+- Khi chạy file 1Kints.txt : dao động từ 3 - 10 milis
+- Khi chạy file 2Kints.txt : dao động từ 10 - 28 milis
+- Khi chạy file 4Kints.txt : dao động từ 15 - 35 milis
