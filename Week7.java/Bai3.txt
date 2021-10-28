@@ -1,0 +1,10 @@
+Bài 3
+Trong hai thuật toán sắp xếp Chọn (Insertion sort) và Chèn/Xen vào (Selection Sort),
+dữ liệu đầu vào có nên lưu trong LinkedList (danh sách liên kết) không ?
+Vì sao ?
+
+Trả lời: Đối với 2 phép toán trên không nên dùng LinkedList (danh sách liên kết)
+Vì: 2 thuật toán trên cần các thao tác duyệt, đổi chỗ, truy xuất đến 1 phần tử 
+Mà với LinkedList, việc này mất rất nhiều thao tác, thời gian.
+Đặc biệt với InSertionSort có thao tác so sánh và đổi chỗ với phần tử trước nó, 
+việc này em cho rằng mất nhiều thời gian với LinkedList khi không có NodePre
