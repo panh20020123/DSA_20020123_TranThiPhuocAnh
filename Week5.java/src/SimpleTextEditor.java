@@ -1,57 +1,47 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
-public class SimpleTextEditor {
-    static String s = "";
-    static Stack<String> stack = new Stack<>();
+public class Solution {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            int q = sc.nextInt();
-            switch (q){
-                case 1:
-                    String w = sc.next();
-                    append(w);
-                    break;
-                case 2:
-                    int k = sc.nextInt();
-                    delete(k);
-                    break;
-                case 3:
-                    int kth = sc.nextInt();
-                    print(kth);
-                    break;
-                case 4:
-                    Undo();
-                    break;
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan=new Scanner(System.in);
+        int q=scan.nextInt();
+        Stack<String> stack=new Stack<String>();
+        String s="";
+        stack.push(s);
+        for(int t=0;t<q;t++)
+            {
+            int no=scan.nextInt();
+            if(no==1)
+                {
+               s=s.concat(scan.next());
+               //System.out.println(s);
+                stack.push(s);
             }
-           // System.out.println(s);
-
+            else if(no==2)
+                {
+                int k=scan.nextInt();
+                if((s.length()-k)!=0)
+                s=s.substring(0,s.length()-k);
+                else
+                    s="";
+                //System.out.println(s);
+                stack.push(s);
+            }
+            else if(no==3)
+                {
+                int k=scan.nextInt();
+                System.out.println(s.charAt(k-1));
+            }
+            else
+                {
+                   stack.pop();
+                s=stack.peek();
+            }
         }
-    }
-
-    private static void Undo() {
-        stack.pop();
-        s = stack.peek();
-    }
-
-    public static void print(int kth) {
-
-        System.out.println(s.charAt(kth - 1));
-    }
-
-    public static void delete(int k) {
-        int l = s.length();
-        if (l < k) return;
-        s = s.substring(0, l - k);
-        stack.push(s);
-    }
-
-    public static void append(String w) {
-        s = s + w;
-        stack.push(s);
     }
 }
