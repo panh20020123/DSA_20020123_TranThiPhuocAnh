@@ -14,32 +14,32 @@ public class Solution {
         String s="";
         stack.push(s);
         for(int t=0;t<q;t++)
-            {
+        {
             int no=scan.nextInt();
             if(no==1)
-                {
-               s=s.concat(scan.next());
-               //System.out.println(s);
+            {
+                s=s.concat(scan.next());
+                //System.out.println(s);
                 stack.push(s);
             }
             else if(no==2)
-                {
+            {
                 int k=scan.nextInt();
                 if((s.length()-k)!=0)
-                s=s.substring(0,s.length()-k);
+                    s=s.substring(0,s.length()-k);
                 else
                     s="";
                 //System.out.println(s);
                 stack.push(s);
             }
             else if(no==3)
-                {
+            {
                 int k=scan.nextInt();
                 System.out.println(s.charAt(k-1));
             }
             else
-                {
-                   stack.pop();
+            {
+                stack.pop();
                 s=stack.peek();
             }
         }
